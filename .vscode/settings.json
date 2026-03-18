@@ -1,0 +1,20 @@
+{
+  "tailwindCSS.experimental.configFile": "./app/globals.css",
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.next/**"
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "emmet.includeLanguages": {
+    "typescriptreact": "html"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
+}
