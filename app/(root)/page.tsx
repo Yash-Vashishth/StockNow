@@ -3,8 +3,8 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className='flex items-center justify-center h-screen'>
-      <Button>Home</Button>
+    <div className='flex min-h-screen home-wrapper'>
+      Home
     </div>
   )
 }
