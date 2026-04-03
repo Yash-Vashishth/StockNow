@@ -15,13 +15,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from "next/navigation"
 import { LogOut } from "lucide-react";
 import NavItems from "../components/NavItems";
+import { signOut } from "@/lib/actions/auth.actions";
 
 
 const UserDropdown = () => {
   const router = useRouter();
 
   const handleSignOut = async () => {
-    // Clear user session or token here
+    await signOut();
     router.push('/sign-in'); // Redirect to login page after sign out
   };
 
