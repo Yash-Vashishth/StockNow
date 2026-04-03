@@ -4,12 +4,15 @@ import FooterLink from '@/components/forms/FooterLink';
 import InputField from '@/components/forms/InputField';
 import SelectField from '@/components/forms/SelectField';
 import { Button } from '@/components/ui/button';
+import { signUpWithEmail } from '@/lib/actions/auth.actions';
 import { INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS } from '@/lib/constants';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import { useForm } from 'react-hook-form'
-
+import { toast } from 'sonner';
 
 const SignUp = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -29,12 +32,23 @@ const SignUp = () => {
   } );
 
   const onSubmit = async (data: SignUpFormData) => {
-    try {
-      console.log(data);
-    } catch (e) {
-      console.error(e);
-    }
-  };
+  try {
+    const res = await signUpWithEmail({
+      email: data.email,
+      password: data.password,
+      fullName: data.fullName,
+      country: data.country,
+      investmentGoals: data.investmentGoals,
+      riskTolerance: data.riskTolerance,
+      preferredIndustry: data.preferredIndustry,
+    });
+
+    toast.success("Account created successfully!");
+    router.push('/');
+  } catch (e: any) {
+    toast.error(e?.message || "Signup failed");
+  }
+};
 
   return (
     <>
