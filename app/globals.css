@@ -260,7 +260,7 @@
   }
 
   .search-input {
-    @apply !bg-gray-800 border-0 text-gray-400 placeholder:text-gray-500 focus:ring-0 text-base h-14 pr-10;
+    @apply !bg-gray-700 border-0 text-gray-400 placeholder:text-gray-500 focus:ring-0 text-base h-5 pr-5;
   }
 
   .search-loader {
