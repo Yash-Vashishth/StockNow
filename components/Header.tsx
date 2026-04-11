@@ -13,7 +13,7 @@ const Header = async () => {
   const session = await auth.api.getSession({ headers: await headers() });
   const user = session?.user ? { id: session.user.id, name: session.user.name, email: session.user.email } : null;
 
-  if (!user) return null;
+
 
   return (
     <header className='sticky top-0 header'>
