@@ -24,7 +24,13 @@ const Header = async () => {
         <nav className='hidden sm:block'>
           <NavItems initialStocks={initialStocks} />
         </nav>
-        <UserDropdown user={user} initialStocks={initialStocks} />
+        {user ? (
+          <UserDropdown user={user} initialStocks={initialStocks} />
+        ) : (
+          <Link href="/sign-in" className="text-gray-400 hover:text-yellow-500 transition-colors font-medium">
+            Sign In
+          </Link>
+        )}
       </div>
     </header>
   )
